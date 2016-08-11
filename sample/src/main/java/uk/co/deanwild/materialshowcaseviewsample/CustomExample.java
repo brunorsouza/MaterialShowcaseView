@@ -50,6 +50,7 @@ public class CustomExample extends AppCompatActivity implements View.OnClickList
                     .setContentText("Example of how to setup a MaterialShowcaseView for menu items in action bar.")
                     .setContentTextColor(getResources().getColor(R.color.green))
                     .setMaskColour(getResources().getColor(R.color.purple))
+                    .setImgTop(R.drawable.ic_android_white_24dp)
                     .show();
         }
 

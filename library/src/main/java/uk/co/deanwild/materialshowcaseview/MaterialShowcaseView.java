@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -57,6 +58,8 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
     private TextView mTitleTextView;
     private TextView mContentTextView;
     private TextView mDismissButton;
+    private ImageView mImgTop;
+    private ImageView mImgBottom;
     private int mGravity;
     private int mContentBottomMargin;
     private int mContentTopMargin;
@@ -125,6 +128,8 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
         mContentTextView = (TextView) contentView.findViewById(R.id.tv_content);
         mDismissButton = (TextView) contentView.findViewById(R.id.tv_dismiss);
         mDismissButton.setOnClickListener(this);
+        mImgTop = (ImageView) contentView.findViewById(R.id.img_top);
+        mImgBottom = (ImageView) contentView.findViewById(R.id.img_bottom);
     }
 
 
@@ -394,6 +399,18 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
         }
     }
 
+    private void setImgTop(int resource) {
+        if (mImgTop != null) {
+            mImgTop.setImageResource(resource);
+        }
+    }
+
+    private void setImgBottom(int resource) {
+        if (mImgBottom != null) {
+            mImgBottom.setImageResource(resource);
+        }
+    }
+
     private void setShapePadding(int padding) {
         mShapePadding = padding;
     }
@@ -604,6 +621,16 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
 
         public Builder setDismissTextColor(int textColour) {
             showcaseView.setDismissTextColor(textColour);
+            return this;
+        }
+
+        public Builder setImgTop(int resource) {
+            showcaseView.setImgTop(resource);
+            return this;
+        }
+
+        public Builder setImgBottom(int resource) {
+            showcaseView.setImgBottom(resource);
             return this;
         }
 
